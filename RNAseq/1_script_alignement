@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in $(ls /mnt/upsuter/upsuter-raw/RNAseq_Proteomics_Michael/AVT0077/avid*/*_R1_* | sort -u); do STAR --genomeDir indexes/ \
+--readFilesIn ${i} ${i/_R1_/_R2_} \
+--runThreadN 20 --outFileNamePrefix /home/bmartin/Desktop/RNAseq_analysis/ALIGNED/$(basename ${i/_R1_001.fastq.gz/})/ \
+--outSAMtype BAM SortedByCoordinate \
+--quantMode GeneCounts \
+--readFilesCommand gunzip -c ; done;

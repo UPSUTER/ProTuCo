@@ -1,0 +1,1 @@
+STAR --runThreadN 24 --runMode genomeGenerate --genomeDir ./indexes/ --genomeFastaFiles GRCm39.primary_assembly.genome.fa --sjdbGTFfile gencode.vM35.primary_assembly.basic.annotation.gtf --sjdbOverhang 100
